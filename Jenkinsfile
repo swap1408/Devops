@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout Code'){
             steps {
-                git url: 'https://github.com/swap1408/Devops.git'
+                git url: 'https://github.com/swap1408/Devops.git', branch:'main'
             }
         }
         
