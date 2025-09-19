@@ -22,7 +22,7 @@ pipeline {
         
         stage('Build artifact'){
             steps {
-                sh 'zip -r build.zip.'
+                sh 'zip -r build.zip .'
             }
         }
         
