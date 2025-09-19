@@ -8,31 +8,31 @@ pipeline {
             }
         }
         
-        stages('Install Dependencies'){
+        stage('Install Dependencies'){
             steps {
                 sh 'npm install'
             }
         }
         
-        stages('Run Unit Tests'){
+        stage('Run Unit Tests'){
             steps {
                 sh 'npm test'
             }
         }
         
-        stages('Build artifact'){
+        stage('Build artifact'){
             steps {
                 sh 'zip -r build.zip.'
             }
         }
         
-        stages('Archive Artifact'){
+        stage('Archive Artifact'){
             steps {
               archiveArtifacts artifacts: 'build.zip', fingerprint:true
             }
         }
         
-        stages('Notifications'){
+        stage('Notifications'){
             steps {
                 echo 'Build and tests succeeded!'
             }
